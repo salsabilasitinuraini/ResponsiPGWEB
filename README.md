@@ -50,7 +50,7 @@
 ## 🚀Cara Menjalankan Website
 1. Clone repository ini ke komputer lokal Anda:
     ```bash
-    git clone https://github.com/username/SchoolRide.git
+    git clone https://salsabilasitinuraini.github.io/ResponsiPGWEB/
     ```
 2. Pastikan Anda sudah menginstal PHP, Composer, dan perangkat yang diperlukan untuk menjalankan proyek ini.
 3. Jalankan server lokal:
@@ -64,8 +64,8 @@
 ## ☎️Kontak
 Tim Pengembang **SchoolRide**
 
-- **Email**: [schoolride@example.com](mailto:schoolride@example.com)
-- **Website**: [www.schoolride.com](http://www.schoolride.com)
+- **Email**: (salsabilasitinuraini@mail.ugm.ac.id)
+
 
 Dibuat dengan ❤️ untuk Kota Magelang
 
