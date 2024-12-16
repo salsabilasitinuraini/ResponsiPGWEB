@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Sarana Transportasi dan Pendidikan di Kota Magelang</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F1F9F9;
+            color: #333;
+        }
+
+        header {
+            background-color: #C9E6F0;
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+      /* Main Header */
+/* Main Header */
+h1 {
+    margin: 0;
+    font-size: 2em; /* Font size for the main header */
+}
+
+/* Section Headers */
+h2 {
+    font-size: 1.5em; /* Font size for section headers */
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1em; /* Font size for paragraphs */
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: justify; /* Membuat teks menjadi rata kiri-kanan */
+}
+
+
+/* Strong Text */
+strong {
+    color: #000;
+}
+
+/* Section Container */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 40px; /* Increased margin for more space on the left and right */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Hover Effect for Section */
+section:hover {
+    transform: scale(1.05); /* Slightly enlarge the section */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Add shadow to create depth */
+}
+
+/* Text Content */
+.text-content {
+    flex: 1;
+    margin-right: 40px; /* Increased margin-right for more space on the right side */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Image Content */
+.image-content {
+    flex: 1;
+    max-width: 400px;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Image Content Hover Effect */
+.image-content:hover {
+    transform: scale(1.05); /* Slightly enlarge the image */
+}
+
+/* Image Styling */
+.image-content img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Text Content Hover Effect */
+.text-content:hover {
+    transform: translateX(10px); /* Slight shift to the right */
+}
+
+
+        footer {
+            background-color: #1F509A;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: white;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        
+        /* Tambahkan style CSS untuk navbar yang dipindahkan */
+        .header {
+            background-color: #1F509A;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Navbar moved here -->
+    <div class="header">
+        <h1>SchoolRide</h1>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="">Data</a>
+                <div class="dropdown-content">
+                    <a href="titik_halte.php">Titik Halte</a>
+                    <a href="titik_pendidikan.php">Titik Pendidikan</a>
+                </div>
+            </div>
+            <a href="info.html">Info</a>
+            <a href="peta.html">Map</a>
+            <a href="profil.html">Profil</a>
+        </nav>
+    </div>
+
+    <header>
+        <h1>Sarana Transportasi dan Pendidikan di Kota Magelang</h1>
+    </header>
+
+    
+
+    <section id="transportasi">
+        <div class="text-content">
+            <h2>Sarana Transportasi di Kota Magelang</h2>
+            <p>
+                Kota Magelang, yang terletak di tengah Pulau Jawa, memiliki sistem transportasi yang cukup berkembang dan strategis. Kota ini berada di persilangan jalur penting yang menghubungkan Semarang, Yogyakarta, dan sejumlah kota besar lainnya. Hal ini menjadikan Magelang memiliki peran yang vital dalam mendukung mobilitas ekonomi dan sosial. Salah satu fasilitas transportasi utama adalah Terminal Tidar, yang berfungsi sebagai terminal induk untuk angkutan antar kota dan dalam kota. Terminal ini terhubung dengan berbagai moda transportasi, termasuk bus dan angkutan umum lainnya, yang melayani rute-rute penting di wilayah Magelang dan sekitarnya.
+            </p>
+            <p>
+                Selain Terminal Tidar, Kota Magelang juga memiliki beberapa sub-terminal, seperti yang ada di Kebonpolo dan Rejomulyo, yang mendukung kelancaran peralihan moda angkutan. Sub-terminal ini mempermudah masyarakat untuk berpindah antara angkutan dalam kota dan angkutan antar kota. Di samping itu, ada juga beberapa titik pergantian moda transportasi yang berlokasi di kawasan-kawasan strategis, seperti di Canguk, Shopping Center, dan Alibasah Sentotprawirodirjo. Meski tidak terkelola dengan sistem yang sama seperti sub-terminal resmi, tempat-tempat ini tetap memiliki peran penting dalam mobilitas penduduk kota.
+            </p>
+            <p>
+                Dengan letaknya yang strategis, Magelang juga menjadi titik penting dalam jalur distribusi barang dan wisata, terutama mengingat kedekatannya dengan destinasi terkenal seperti Candi Borobudur dan kawasan wisata Dieng Plateau. Oleh karena itu, perencanaan dan pengembangan sarana transportasi di kota ini terus diperbaharui untuk memenuhi kebutuhan masyarakat yang semakin berkembang.
+            </p>
+            
+        </div>
+        <div class="image-content">
+            <img src="logo_magelang.png" alt="Transportasi di Kota Magelang">
+        </div>
+    </section>
+
+    <section id="pendidikan">
+        <div class="text-content">
+            <h2>Sarana Pendidikan di Kota Magelang</h2>
+            <p>
+                Kota Magelang tidak hanya dikenal sebagai pusat ekonomi dan pariwisata, tetapi juga memiliki kualitas pendidikan yang terus berkembang. Pemerintah Kota Magelang berkomitmen untuk menyediakan sarana pendidikan yang memadai bagi warganya. Di sektor pendidikan, kota ini memiliki berbagai fasilitas pendidikan mulai dari Pendidikan Anak Usia Dini (PAUD) hingga tingkat Sekolah Menengah Pertama (SMP) dan Sekolah Menengah Atas (SMA).
+            </p>
+            <p>
+                Pada tingkat PAUD, Kota Magelang menunjukkan perhatian besar terhadap pendidikan inklusif. Pemerintah setempat berusaha memastikan bahwa sarana dan prasarana pendidikan memenuhi standar aksesibilitas yang tinggi. Hal ini dilakukan melalui penerapan desain universal pada banyak fasilitas pendidikan, yang memungkinkan anak-anak dengan berbagai kebutuhan untuk mendapatkan pendidikan yang layak. Fasilitas pendidikan dasar juga cukup lengkap, dengan banyak sekolah dasar yang tersebar di berbagai kelurahan di kota ini, mendukung program wajib belajar pendidikan dasar sembilan tahun.
+            </p>
+            <p>
+                Selain itu, untuk tingkat pendidikan menengah, Kota Magelang memiliki sejumlah SMP dan SMA yang telah terakreditasi dengan baik. Banyak dari sekolah-sekolah ini yang memiliki fasilitas yang memadai, serta guru-guru yang terlatih dengan baik untuk mendukung perkembangan siswa. Kota ini juga memiliki rasio yang baik antara jumlah sekolah dan jumlah penduduk usia sekolah, yang memungkinkan akses pendidikan yang lebih merata di berbagai kalangan masyarakat.
+            </p>
+            <p>
+                Magelang juga berupaya untuk meningkatkan kualitas pendidikan melalui berbagai program pelatihan dan pengembangan bagi tenaga pendidik. Dengan dukungan dari pemerintah daerah dan kerjasama dengan berbagai lembaga pendidikan, kota ini terus berupaya menciptakan generasi muda yang terampil dan siap menghadapi tantangan masa depan. Program-program ini juga mendukung keberagaman dan inklusivitas dalam pendidikan, sehingga setiap anak di Kota Magelang dapat menikmati pendidikan yang berkualitas tanpa terkendala oleh latar belakang sosial dan ekonomi.
+            </p>
+            
+        </div>
+        <div class="image-content">
+            <img src="peta_magelang.jpeg" alt="Pendidikan di Kota Magelang">
+        </div>
+    </section>
+
+    <section id="schoolride">
+        <div class="text-content">
+            <h2>Integrasi dengan SchoolRide</h2>
+            <p>
+            <p>Melalui SchoolRide, Anda dapat melihat persebaran titik halte dan terminal di Kota Magelang, termasuk Terminal Tidar dan sub-terminal lainnya, serta titik pergantian moda transportasi seperti yang ada di Canguk, Shopping Center, dan Alibasah Sentotprawirodirjo. Peta interaktif yang disediakan oleh SchoolRide memungkinkan pengguna untuk dengan mudah menemukan jalur angkutan umum dan titik penting yang mendukung mobilitas masyarakat di dalam kota Magelang.
+            </p>
+            <p>Selain itu, SchoolRide juga menampilkan informasi lengkap tentang lokasi sekolah-sekolah di Kota Magelang, dari Pendidikan Anak Usia Dini (PAUD) hingga Sekolah Menengah Atas (SMA). Hal ini sangat berguna untuk orang tua dan siswa yang ingin mengetahui aksesibilitas pendidikan di Magelang, termasuk fasilitas yang mendukung pendidikan inklusif. Dengan peta yang menunjukkan lokasi sekolah-sekolah dan angkutan umum yang tersedia di sekitar area tersebut, pengguna dapat merencanakan perjalanan mereka dengan lebih mudah.</p>
+
+            <p>
+                Untuk informasi lebih lanjut mengenai lokasi titik transportasi dan pendidikan di Kota Magelang, Anda bisa langsung mengakses SchoolRide, yang menyediakan peta interaktif dan data terkait yang terus diperbarui untuk mendukung mobilitas dan kualitas pendidikan di kota ini.
+            </p>
+
+        </div>
+       
+    </section>
+
+    <footer>
+        <p style="color: white; text-align: center;">Sumber:</p>
+
+        <ul>
+            <li><a href="https://magelangkota.go.id">Kota Magelang - Kondisi Geografis dan Transportasi</a></li>
+            <li><a href="https://disdikbud.magelangkota.go.id">Pendidikan di Kota Magelang</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

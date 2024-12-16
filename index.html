@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - School Ride</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('terminal.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .header {
+            background-color: #1F509A;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            /* Dibutuhkan untuk menempatkan dropdown */
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Weather Button Styling */
+        #weather-button {
+            position: absolute;
+            top: 120px;
+            left: 30px;
+            background-color: #e4ffff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        #weather-button:hover {
+            transform: scale(1.1);
+        }
+
+        #weather-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Weather Popup Styling */
+        #weather-popup {
+            display: none;
+            position: absolute;
+            top: 180px;
+            left: 10px;
+            width: 250px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            z-index: 20;
+            font-family: 'Poppins', sans-serif;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #weather-popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #78B3CE;
+        }
+
+        #weather-popup h3 {
+            margin-top: 0;
+            color: black;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        #weather-details-content {
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        #weather-details-content p {
+            margin: 5px 0;
+        }
+
+        #weather-details-content a {
+            color: #78B3CE;
+            text-decoration: none;
+        }
+
+        #weather-details-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content Section */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            text-align: center;
+            padding: 20px 10px;
+            /* Mengurangi padding */
+            margin-bottom: 10px;
+            /* Mengurangi jarak bawah */
+        }
+
+        .main-content .info {
+            max-width: 700px;
+            padding: 15px;
+            /* Mengurangi padding */
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Menyusutkan bayangan */
+            border-radius: 10px;
+        }
+
+        .main-content .info h2 {
+            font-size: 1.8rem;
+            /* Mengurangi ukuran font */
+            margin-bottom: 15px;
+            /* Mengurangi jarak bawah */
+        }
+
+        .main-content .info p {
+            font-size: 0.9rem;
+            /* Mengurangi ukuran font */
+            margin-bottom: 20px;
+            /* Mengurangi jarak bawah */
+        }
+
+        .btn {
+            background-color: #1F509A;
+            color: white;
+            padding: 12px 25px;
+            /* Mengurangi padding */
+            font-size: 1rem;
+            /* Mengurangi ukuran font */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #80C4E9;
+        }
+
+        /* Wrapper Utama: Gabungkan Semua ke dalam Satu Background */
+        .fitur-wrapper {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px auto;
+            /* Margin auto untuk pusatkan elemen */
+            width: 100%;
+            max-width: 1200px;
+            /* Menambahkan max-width agar tidak melebihi lebar tertentu */
+            box-sizing: border-box;
+            /* Pastikan padding dan border dihitung dalam lebar elemen */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .fitur-title {
+            font-size: 24px;
+            /* Mengurangi ukuran font */
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Mengurangi jarak bawah */
+        }
+
+        .fitur-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            /* Mengurangi jarak antar fitur */
+            margin-top: 15px;
+            /* Mengurangi jarak atas */
+        }
+
+        /* Kotak Fitur */
+        .fitur-box {
+            background-color: #F1F9F9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Bayangan normal */
+            text-align: center;
+            padding: 15px;
+            flex: 1;
+            max-width: 280px;
+            transition: all 0.3s ease-in-out;
+            /* Transisi halus untuk efek */
+        }
+
+        /* Efek Hover saat kursor diarahkan */
+        .fitur-box:hover {
+            transform: translateY(-10px);
+            /* Menarik elemen ke atas */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            /* Menambahkan bayangan lebih besar */
+        }
+
+
+        .fitur-box h3 {
+            color: black;
+            font-size: 18px;
+            /* Mengurangi ukuran font */
+            margin-bottom: 8px;
+            /* Mengurangi jarak bawah */
+        }
+
+        .fitur-box p {
+            color: #333;
+            font-size: 13px;
+            /* Mengurangi ukuran font */
+            line-height: 1.5;
+            /* Mengurangi jarak antar baris */
+        }
+
+        /* Background Keseluruhan Halaman */
+        body {
+            background-color: #f4f4f9;
+            /* Latar belakang halaman */
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-section {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 10px 5px;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .contact-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            /* Kurangi jarak antar elemen */
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background-color: #F1F9F9;
+            padding: 15px;
+            /* Kurangi padding */
+            width: 250px;
+            /* Kurangi lebar */
+            border-radius: 8px;
+            /* Sesuaikan sudut */
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            /* Kurangi efek bayangan */
+            text-align: center;
+        }
+
+        .contact-item img {
+            width: 40px;
+            /* Perkecil ukuran gambar */
+            margin-bottom: 0px;
+        }
+
+        .contact-item h4 {
+            font-size: 1rem;
+            /* Perkecil ukuran font */
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .contact-item p {
+            font-size: 0.9rem;
+            /* Perkecil ukuran font deskripsi */
+            color: #666;
+            margin: 0;
+        }
+
+
+        footer {
+            background-color: #1F509A;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>SchoolRide</h1>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="">Data</a>
+                <div class="dropdown-content">
+                    <a href="titik_halte.php">Titik Halte</a>
+                    <a href="titik_pendidikan.php">Titik Pendidikan</a>
+                </div>
+            </div>
+            <a href="info.html">Info</a>
+            <a href="peta.html">Map</a>
+            <a href="profil.html">Profil</a>
+        </nav>
+    </header>
+
+
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <div class="info">
+            <h2>Selamat Datang di SchoolRide!</h2>
+            <h3>Mencari transportasi ke sekolah kini jadi lebih mudah dan praktis!</h3>
+            <p>SchoolRide adalah platform berbasis peta interaktif yang membantu Anda menemukan jalur transportasi
+                terbaik menuju sekolah atau sarana pendidikan lainnya di Kota Magelang. Dengan menggunakan peta ini,
+                Anda dapat dengan mudah mencari halte, terminal, trayek transportasi, dan lokasi-lokasi penting yang
+                terkait dengan pendidikan.</p>
+            <a href="peta.html" class="btn">Lihat Peta</a>
+        </div>
+    </section>
+
+    <!-- Weather Button -->
+    <button id="weather-button">
+        <img src="https://cdn-icons-png.flaticon.com/128/1163/1163759.png" alt="Weather Icon">
+    </button>
+
+    <!-- Weather Popup -->
+    <div id="weather-popup">
+        <button class="close-btn" onclick="toggleWeatherPopup()">&times;</button>
+        <h3>Cuaca Hari Ini</h3>
+        <div id="weather-details-content">
+            Memuat data cuaca...
+        </div>
+    </div>
+
+    <!-- Container Utama dengan Background Transparan -->
+    <div class="fitur-wrapper">
+        <!-- Judul Utama -->
+        <h1 class="fitur-title">Fitur Tersedia</h1>
+
+        <!-- Container untuk Fitur -->
+        <div class="fitur-container">
+            <div class="fitur-box">
+                <h3>Peta Interaktif</h3>
+                <p>Navigasi dan eksplorasi peta dengan berbagai fitur menarik.</p>
+            </div>
+            <div class="fitur-box">
+                <h3>Data Akurat</h3>
+                <p>Informasi geospasial yang lengkap dan terintegrasi.</p>
+            </div>
+            <div class="fitur-box">
+                <h3>Google Maps</h3>
+                <p>Navigasi dan petunjuk arah tiap data titik yang ada.</p>
+            </div>
+            <div class="fitur-box">
+                <h3>Cuaca Terkini</h3>
+                <p>Data cuaca real-time untuk Kota Magelang.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 SchoolRide | Solusi Aman dan Nyaman untuk Transportasi Pelajar Kota Magelang</p>
+    </footer>
+
+    <!-- Script untuk Cuaca -->
+    <script>
+        const apiKey = 'a4ea1f63c73d27ae3c2823f5f542788d';
+        const cityName = 'Magelang';
+        const weatherButton = document.getElementById('weather-button');
+        const weatherPopup = document.getElementById('weather-popup');
+        const weatherDetailsContent = document.getElementById('weather-details-content');
+
+        function toggleWeatherPopup() {
+            if (weatherPopup.style.display === 'block') {
+                weatherPopup.style.display = 'none';
+            } else {
+                fetchWeatherData();
+            }
+        }
+
+        function fetchWeatherData() {
+            weatherDetailsContent.innerHTML = 'Memuat data cuaca...';
+            weatherPopup.style.display = 'block';
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.cod === 200) {
+                        const temp = data.main.temp;
+                        const feelsLike = data.main.feels_like;
+                        const humidity = data.main.humidity;
+                        const windSpeed = data.wind.speed;
+                        const description = data.weather[0].description;
+
+                        const weatherLink = `https://openweathermap.org/city/1636884`;
+
+                        weatherDetailsContent.innerHTML = `
+                        <p><strong>Suhu:</strong> <a href="${weatherLink}" target="_blank">${temp.toFixed(1)}°C</a></p>
+                        <p><strong>Terasa Seperti:</strong> ${feelsLike.toFixed(1)}°C</p>
+                        <p><strong>Kelembaban:</strong> ${humidity}%</p>
+                        <p><strong>Kecepatan Angin:</strong> ${windSpeed} m/s</p>
+                        <p><strong>Kondisi:</strong> ${description}</p>
+                    `;
+                    } else {
+                        weatherDetailsContent.innerHTML = `
+                        <p>Gagal memuat data cuaca: ${data.message}</p>
+                    `;
+                    }
+                })
+                .catch(error => {
+                    weatherDetailsContent.innerHTML = `
+                    <p>Terjadi kesalahan: ${error.message}</p>
+                `;
+                });
+        }
+
+        // Add event listener to weather button
+        weatherButton.addEventListener('click', toggleWeatherPopup);
+    </script>
+
+</body>
+
+</html>
