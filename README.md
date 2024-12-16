@@ -75,6 +75,8 @@ Dibuat dengan ❤️ untuk Kota Magelang
 
 Dukung pengembangan **SchoolRide** dengan memberikan ⭐ bintang di repository ini!
 
+---------
+
 - **Halaman Utama**
 ![image](https://github.com/user-attachments/assets/e8955b45-008f-4733-9094-55393b0dd4da)
 ![image](https://github.com/user-attachments/assets/a084fb2a-3116-4ee7-a6da-aaa593a32e74)
@@ -85,8 +87,8 @@ Dukung pengembangan **SchoolRide** dengan memberikan ⭐ bintang di repository i
 ![image](https://github.com/user-attachments/assets/7ef8b8e5-49e4-463b-b8f5-ff31aab22427)
 
 - **Info**
-  ![image](https://github.com/user-attachments/assets/f19605ae-5e1c-4c8f-bd45-c327e195f7d6)
-  ![image](https://github.com/user-attachments/assets/be42fef4-ce3c-4b26-bc2e-f703319a0f17)
+![image](https://github.com/user-attachments/assets/7962b87d-4881-4022-8229-fa7567f1fcf1)
+![image](https://github.com/user-attachments/assets/be42fef4-ce3c-4b26-bc2e-f703319a0f17)
 
 - **Peta Interaktif**
 ![image](https://github.com/user-attachments/assets/f03a0c8f-581a-4628-b170-91b3d6bc6b04)
